@@ -5,5 +5,15 @@ export default function playlistsReducer(state = [], action) {
     return [...state, {id: action.id, name: action.name, songs: [] }];
   }
 
+  if (action.type === actionTypes.ADD_SONG) {
+    const targetPlaylist = state.find(p => p.id == action.playlistId);
+    const tmpPlaylist = Object.assign({}, targetPlaylist, {
+      songs: [...targetPlaylist.songs, action.songId]
+    });
+    const playlists = state.filter(p => p.id != action.playlistId);
+
+    return [...playlists, tmpPlaylist];
+  }
+
   return state;
 }

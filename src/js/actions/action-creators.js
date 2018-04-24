@@ -5,3 +5,9 @@ export const createPlayListCreator = playListName => ({
   id: new Date().getTime(),
   name: playListName
 });
+
+export const addSongToPlaylist = (playlistId, songId) => ({
+  type: actionTypes.ADD_SONG,
+  playlistId: playlistId,
+  songId: songId
+});

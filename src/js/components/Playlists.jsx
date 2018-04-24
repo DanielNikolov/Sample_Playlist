@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Playlists extends Component {
   constructor(props) {
@@ -15,7 +16,11 @@ class Playlists extends Component {
       <ul>
         {
           this.props.playlists.map(playlist => {
-            return <li key={playlist.id}><span>{playlist.name}</span></li>;
+            return (
+              <li key={playlist.id}>
+                <Link to={'/playlist/' + playlist.id}>{playlist.name}</Link>
+              </li>
+            )
           })
         }
       </ul>

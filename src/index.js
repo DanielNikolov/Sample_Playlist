@@ -11,11 +11,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './js/common/Header';
 import Sidebar from './js/common/Sidebar';
 import CreatePlayListForm from './js/components/CreatePlayListForm';
+import Playlist from './js/components/Playlist';
+import Songs from './js/components/Songs';
 import playlistsReducer from './js/reducers/playlists-reducer';
+import songsReducer from './js/reducers/songs-reducer';
 
 const AppState = {
   /* Reducers and state go here */
   playlists: playlistsReducer,
+  songs: songsReducer,
   sample: () => true
 };
 
@@ -37,7 +41,8 @@ class App extends React.Component {
               <div className="col-9 main">
                 {/* Routes go here */}
                 <Route path="/create-playlist" component={CreatePlayListForm} exact />
-                <Route path="/playlist/:id" 
+                <Route path="/playlist/:id" component={Playlist} />
+                <Route path="/songs" component={Songs} exact />
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ class Sidebar extends React.Component {
       <aside className="site-sidebar">
         <nav className="side-nav">
           <ul>
+            <li><Link to="/songs">Songs</Link></li>
             <li><Link to="/create-playlist">Create Playlist</Link></li>
           </ul>
         </nav>
