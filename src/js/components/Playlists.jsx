@@ -15,7 +15,7 @@ class Playlists extends Component {
       <ul>
         {
           this.props.playlists.map(playlist => {
-            return <li key={playlist.name}><span>{playlist.name}</span></li>;
+            return <li key={playlist.id}><span>{playlist.name}</span></li>;
           })
         }
       </ul>
