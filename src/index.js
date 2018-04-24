@@ -35,8 +35,9 @@ class App extends React.Component {
                 <Sidebar />
               </div>
               <div className="col-9 main">
-                <Route path="/create-playlist" component={CreatePlayListForm} exact />
                 {/* Routes go here */}
+                <Route path="/create-playlist" component={CreatePlayListForm} exact />
+                <Route path="/playlist/:id" 
               </div>
             </div>
           </div>
